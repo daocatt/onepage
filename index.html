@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>onepage</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="keywords" content="onepage,daocaoit">
+        <meta name="description" content="onepage blog">
+        <meta name="copywrite" content="onepage">
+        <meta name="author" content="daocaoit">
+
+
+        <!-- import styles -->
+        <link href="public/css/style.css" rel="stylesheet">
+        
+        <link href="skin/default/skin.css" rel="stylesheet">
+        
+        <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <!-- Le fav and touch icons -->
+        <link rel="shortcut icon" href="static/favicon.ico">
+    </head>
+
+    <body>
+        <script id="tpl-main" type="text/template">
+            <div class="navbar navbar-fixed-top">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <a class="brand" href="#">{{site_name}}</a>
+                        <div class="nav-collapse">
+                            <ul class="nav">
+                                {{#navlist}}
+                                <li><a href="{{link}}">{{text}}</a></li>
+                                {{/navlist}}
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span3">
+                        <div class="well sidebar-nav">
+                        </div>
+                    </div>
+                    <div class="span9">
+                        <div class="row-fluid article-content">
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <footer>
+                <p>&copy; {{copyright}} Powered by <a href="https://github.com/onlytiancai/xiaotiantian" target="_blank">xiaotiantian</a></p>
+                </footer>
+            </div><!--/.fluid-container-->
+        </script>
+
+        <script id="tpl-sidebar" type="text/template">
+            <ul class="nav nav-list">
+                {{#months}}
+                <li class="nav-header">{{month}}</li>
+                {{#articles}}
+                <li><a href="#!show/{{cate}}/{{link}}">{{link_title}}</a></li>
+                {{/articles}}
+                {{/months}}
+            </ul>
+        </script>
+        <div class="main-body">
+        </div>
+        <script src="public/js/json2.js"></script>
+        <script src="public/js/jquery.min.js"></script>
+        <script src="public/js/underscore-min.js"></script>
+        <script src="public/js/backbone-min.js"></script>
+        <script src="public/js/mustache.min.js"></script>
+        <script src="public/js/bootstrap.min.js"></script>
+        <script src="public/js/showdown-min.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
