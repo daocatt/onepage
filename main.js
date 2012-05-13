@@ -18,7 +18,7 @@ $(function(){
         result.site_author = data.site_author;
         result.site_keywords = data.site_keywords;
         result.copyright  = data.copyright;
-        result.navlist    = _.map(data.cates, function(cate){
+        result.menulist    = _.map(data.cates, function(cate){
             return {link: '#!cate/'+ cate.name, text: cate.text};
         });
         return result;
@@ -56,7 +56,7 @@ $(function(){
     blog.helper.markdown = new Showdown.converter();
 
     blog.views.Sidebar = Backbone.View.extend({
-        template: $('#tpl-sidebar').html(),
+        template: $('#sidebar').html(),
         initialize: function(options){
             this.model = options.model; 
             _.bindAll(this, 'render');
@@ -95,7 +95,8 @@ $(function(){
 
     blog.views.Main = Backbone.View.extend({
         el:$('.main-body'),
-        template: $('#tpl-main').html(),
+        template: $('#content').html(),
+        
         initialize: function(){
             _.bindAll(this, 'render');
             _.bindAll(this, 'sync');
@@ -119,15 +120,15 @@ $(function(){
 
             var sidebar_mode = blog.helper.build_sidebar_model(this.data, this.cate);
             var sidebar_view = new blog.views.Sidebar({model: sidebar_mode});
-            this.$(".sidebar-nav").empty().append(sidebar_view.render().el);
+            this.$(".main-sidebar").empty().append(sidebar_view.render().el);
 
             if(this.cate){
-                this.$('.navbar-inner .nav li a[href="#!cate/'+this.cate+'"]').parent().addClass('active');
+                this.$('.site_menu li a[href="#!cate/'+this.cate+'"]').parent().addClass('active');
             }
             
             if(this.article){
                 var article_view = new blog.views.Article({cate: this.cate, article: this.article});
-                this.$(".article-content").empty().append(article_view.render().el);
+                this.$(".main-content").empty().append(article_view.render().el);
             }
         }
     }); 

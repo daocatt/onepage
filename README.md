@@ -12,12 +12,15 @@
 4. change txt to md
 5. change css dir and put all js file to local dir.
 
+---
+
+*2012-05-12*
+1. new css style: basic style and skin style
+
 ##Next
 
 ---
 
-1. change CSS frame
-2. skins will be supported and will add some beautiful skins.
 3. make category better.
 
 Anyway, nothing is impossible.
@@ -26,5 +29,5 @@ Anyway, nothing is impossible.
 
 ---
 
-Thanks [小天天博客(https://github.com/onlytiancai/xiaotiantian "小天天博客")
+Thanks [小天天博客](https://github.com/onlytiancai/xiaotiantian "小天天博客")
 
